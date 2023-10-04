@@ -107,7 +107,7 @@ export const getUserProjects = (id: string | undefined, last?: number) => {
     return makeGraphQLRequest(getProjectsOfUserQuery, { id, last })
 }
 
-export const updateProject = async (form: ProjectForm, projectId: string, token: string) => {
+export const updateProject = async (form: ProjectForm, projectId: string | undefined, token: string) => {
     function isBase64DataURL(value: string) {
         const base64Regex = /^data:image\/[a-z]+;base64,/;
         return base64Regex.test(value);
