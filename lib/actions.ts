@@ -101,7 +101,7 @@ export const deleteProject = (id: string, token: string) => {
     return makeGraphQLRequest(deleteProjectMutation, { id })
 }
 
-export const getUserProjects = (id: string, last?: number) => {
+export const getUserProjects = (id: string | undefined, last?: number) => {
     client.setHeader('x-api-key', apiKey);
 
     return makeGraphQLRequest(getProjectsOfUserQuery, { id, last })
